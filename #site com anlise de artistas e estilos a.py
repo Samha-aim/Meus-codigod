@@ -22,8 +22,8 @@ st.write(
 tabela =pd.read_csv(url)
 tabela=tabela.drop(columns="artist_id")
 # 1. Garante que tudo seja tratado como texto e substitui valores vazios por ""
-middle = tabela["middle_names"].astype(str).replace("nan", "")
-last = tabela["last_name"].astype(str)
+middle = tabela["middle_names"].fillna("").astype(str)
+last = tabela["last_name"].fillna("").astype(str)
 
 # 2. Junta as duas colunas com um espaço entre elas
 nova_coluna = middle + " " + last
