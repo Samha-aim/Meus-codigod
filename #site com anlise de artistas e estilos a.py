@@ -5,6 +5,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+url='https://raw.githubusercontent.com/Samha-aim/Meus-codigod/refs/heads/master/artist.csv'
+
 st.write(
     """
 <center>
@@ -16,7 +18,8 @@ st.write(
 """,
     unsafe_allow_html=True,
 )
-tabela =pd.read_csv("artist.csv")
+
+tabela =pd.read_csv(url)
 tabela=tabela.drop(columns="artist_id")
 # 1. Garante que tudo seja tratado como texto e substitui valores vazios por ""
 middle = tabela["middle_names"].astype(str).replace("nan", "")
