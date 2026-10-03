@@ -69,7 +69,7 @@ sidebar = st.sidebar
 #logica da side bar
 tabela_filtrada = tabela.copy()
 if busca:
-    tabela= tabela_filtrada[tabela_filtrada["full_name"].str.contains(busca, case=False)]
+    tabela_filtrada= tabela_filtrada[tabela_filtrada["full_name"].str.contains(busca, case=False)]
 
 if nacionalidade:
     tabela= tabela_filtrada[tabela_filtrada["nationality"] == nacionalidade]
